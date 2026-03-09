@@ -1,19 +1,20 @@
-This article will talk about how to solve a medium level “What’s Your Name” room on #TryHackMe. Besides that, I’ll add quick tips for preventing the vulnerabilities I discovered at the end.
+---                                                                                                                   
+  title: "TryHackme -- Include"          
+  description: "A one or two sentence summary for the post card and SEO."                                               
+  date: "2026-03-09"                                        
+  headerImage: "https://github.com/user-attachments/assets/79f30734-8acc-4256-a7a3-731092b42eae"                                                                             
+---   
 
-Press enter or click to view image in full size
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/79f30734-8acc-4256-a7a3-731092b42eae" />
 
-Room requirements:
 
-Before starting to solve the room, I added the IP address of the target to the /etc/hosts as worldwap.thm.
+A walkthrough for “What’s Your Name” room on #TryHackMe. 
+URL: https://tryhackme.com/room/include
 
-Room also has 2 questions:
-
-Press enter or click to view image in full size
-
-1. Enumeration
+## Enumeration
 As usual, the initial step was scanning open ports of the target.
 
-Press enter or click to view image in full size
+<img width="975" height="418" alt="image" src="https://github.com/user-attachments/assets/e0edc13a-3f62-458e-a6e9-1c7ba01bd7f0" />
 
 3 ports were open — 22, 80, 8081.
 
