@@ -1,42 +1,39 @@
 ---                                                                                                                   
   title: "TryHackme -- Include"          
-  description: "A one or two sentence summary for the post card and SEO."                                               
+  description: "A walkthrough for “
+  Include” room on #TryHackMe -- https://tryhackme.com/room/include"                                               
   date: "2026-03-09"                                        
   headerImage: "https://github.com/user-attachments/assets/79f30734-8acc-4256-a7a3-731092b42eae"                                                                             
 ---   
 
 <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/79f30734-8acc-4256-a7a3-731092b42eae" />
 
-
-A walkthrough for “What’s Your Name” room on #TryHackMe. 
-URL: https://tryhackme.com/room/include
+## Setup
+- Start the target VM
+- Add the IP address to the host file `echo "$IP worldwap.thm" >> /etc/hosts`
 
 ## Enumeration
-As usual, the initial step was scanning open ports of the target.
-
+- Scan for open ports: `nmap -T4 -p- -sC -sV worldwap.thm -Pn -n`
+  
 <img width="975" height="418" alt="image" src="https://github.com/user-attachments/assets/e0edc13a-3f62-458e-a6e9-1c7ba01bd7f0" />
 
-3 ports were open — 22, 80, 8081.
+-> 3 ports were open — 22, 80, 8081.
 
-Press enter or click to view image in full size
+<img width="975" height="565" alt="image" src="https://github.com/user-attachments/assets/d5c70089-d4c4-43dc-9503-189600a3c226" />
 
-I targeted port 80 and fuzzed for disclosing hidden directories and files on port 80.
+- Enumerate directories on port 80
 
-Press enter or click to view image in full size
+```bash
+gobuster dir -u 'http://worldwap.thm' -w /usr/share/wordlists/dirb/big.txt -x .php,.txt,.jsp,.json,.js -b 403-500
+```
 
-I also fuzzed public directory:
+<img width="975" height="473" alt="image" src="https://github.com/user-attachments/assets/42cc7673-d96b-414c-87f5-27e20d34cc24" />
 
-Press enter or click to view image in full size
+- Fuzz hidden directories and files on port 8081.
+  
+<img width="975" height="503" alt="image" src="https://github.com/user-attachments/assets/8a132af6-8927-4915-becc-06c2ccb85f5d" />
 
-Continued from fuzzing /public/html:
-
-Press enter or click to view image in full size
-
-Lastly, fuzzed /api directory:
-
-Press enter or click to view image in full size
-
-The website has a login page:
+- The website has a login page:
 
 Press enter or click to view image in full size
 
@@ -51,11 +48,12 @@ Press enter or click to view image in full size
 2. Moderator access via XSS:
 The website has a register page, so I gave a shot.
 
-Press enter or click to view image in full size
+<img width="975" height="473" alt="image" src="https://github.com/user-attachments/assets/ebb7cdd1-9b96-4249-b1e2-e49ee54ffbc5" />
 
-Press enter or click to view image in full size
+<img width="975" height="386" alt="image" src="https://github.com/user-attachments/assets/c010bda5-aaff-4c64-a7c0-8b4066511106" />
 
-Press enter or click to view image in full size
+<img width="975" height="453" alt="image" src="https://github.com/user-attachments/assets/2ec477f7-d405-4457-ae53-49525812c938" />
+
 
 But returned the following error. Page said that I have to visit the domain named login.worldwap.thm.
 
