@@ -2,7 +2,7 @@
 title: "TryHackMe — OAuth Vulnerabilities"
 description: "A brief introduction to OAuth Authentication and its vulnerabilities."
 date: "2024-11-09"
-headerImage: "https://tryhackme-images.s3.amazonaws.com/room-icons/645b19f5d5848d004ab9c9e2-1719928599415"
+headerImage: "https://tryhackme-images.s3.amazonaws.com/room-icons/62a7685ca6e7ce005d3f3afe-1721736252781"
 tags: ["TryHackMe", "Web App Security"]
 ---
 
