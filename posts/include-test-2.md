@@ -1,12 +1,15 @@
 ---                                                                                                                   
   title: "TryHackme -- Include"          
-  description: "A walkthrough for “
-  Include” room on #TryHackMe -- https://tryhackme.com/room/include"                                               
+  description: "A walkthrough for '
+  Include' room on #TryHackMe"                                         
   date: "2025-10-19"                                        
   headerImage: "https://github.com/user-attachments/assets/79f30734-8acc-4256-a7a3-731092b42eae"                                                                             
 ---   
 
 <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/79f30734-8acc-4256-a7a3-731092b42eae" />
+
+## URL
+https://tryhackme.com/room/include
 
 ## Setup
 - Start the target VM
