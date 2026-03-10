@@ -17,7 +17,7 @@ https://tryhackme.com/room/include
 ## Enumeration
 - Scan for open ports: `nmap -T4 -p- -sC -sV worldwap.thm -Pn -n`
   
-<img width="975" height="418" alt="image" src="https://github.com/user-attachments/assets/e0edc13a-3f62-458e-a6e9-1c7ba01bd7f0" />
+![](https://github.com/user-attachments/assets/e0edc13a-3f62-458e-a6e9-1c7ba01bd7f0)
 
 -> 3 ports were open — 22, 80, 8081.
 
