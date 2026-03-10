@@ -5,7 +5,6 @@ date: "2026-03-09"
 headerImage: "https://github.com/user-attachments/assets/0ed5593d-763c-48c5-9940-532b6e69a818"
 ---
 
-# The Bugs TypeScript Won't Catch in Your Playwright Tests
 
 When building a Playwright test suite using the Page Object Model (POM) pattern, it's easy to write code that *looks* correct but contains subtle bugs, inconsistencies, and silent failure modes that only surface at the worst possible time. This post walks through a real audit of a POM-based E2E suite for a registration and login flow, documenting every issue found and the reasoning behind each fix.
 
