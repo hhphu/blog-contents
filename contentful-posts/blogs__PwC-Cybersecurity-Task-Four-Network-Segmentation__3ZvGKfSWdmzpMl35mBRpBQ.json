@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "tags": [
+      {
+        "sys": {
+          "type": "Link",
+          "linkType": "Tag",
+          "id": "projects"
+        }
+      }
+    ],
+    "concepts": []
+  },
+  "sys": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "e16kkd4dabkb"
+      }
+    },
+    "id": "3ZvGKfSWdmzpMl35mBRpBQ",
+    "type": "Entry",
+    "createdAt": "2024-07-05T11:00:02.390Z",
+    "updatedAt": "2024-07-05T11:00:02.390Z",
+    "environment": {
+      "sys": {
+        "id": "master",
+        "type": "Link",
+        "linkType": "Environment"
+      }
+    },
+    "publishedVersion": 12,
+    "revision": 1,
+    "contentType": {
+      "sys": {
+        "type": "Link",
+        "linkType": "ContentType",
+        "id": "blogs"
+      }
+    },
+    "locale": "en-US"
+  },
+  "fields": {
+    "title": "PwC - Cybersecurity: Task Four - Network Segmentation",
+    "description": "This is the last Task from the PwC - Cybersecurity Consultant project.",
+    "mainText": "# Network Segmentation\n\n## Background\nThe Head of IT Infrastructure of Boldi AG does see the need for network segmentation but cannot follow why a segmented network cannot prevent you from every possible issue. In order to give him and his people a broad understanding of the topic, Stefan organises a workshop and need your help. \n\n## Task\nSubmit a Microsoft Word document with both parts in it to finalise your work.\n\n### Part 1\nFor Stefans preparation, write in Microsoft Word format detailed notes explaining how segmentation contributes to network security and to the security of the whole organisation. Your notes will help Stefan creating the workshop.\n\n### Part 2\nThe  Head of IT Infrastructure of Boldi AG provided Stefan with the following network segmentation:\n\n![Network-diagram](https://cdn.theforage.com/vinternships/companyassets/4sLyCPgmsy8DA6Dh3/9RbnZnMj2k93xffms/Workshop%20Image.png)\n\nDomain: A namespace which logically divides an organisation’s network objects that share the same directory.\n\nAdmin Zone: Special purpose server zone, e.g. central logging, Security Information and Event Management (SIEM)\n\nServer Zone: General purpose server zone, e.g. application servers, database servers\n\nClient Zone: General purpose client zone, e.g. user laptops\n\nRegarding network segmentation and trust architectures, the base configuration and maintenance of firewalls is of great importance. There are two approaches to configuring firewalls: whitelisting the good or blacklisting the bad.\n\nAdd to your notes how firewalls A, B, C and D at Boldi AG need to be configured using the concepts of whitelisting and blacklisting and why. \n\n## Additional Resources\n[Network Segmentation Overview](https://cdn.theforage.com/vinternships/companyassets/4sLyCPgmsy8DA6Dh3/Network%20Segmentation.pdf)\n\n[Network Segmentation Flow](https://cdn.theforage.com/vinternships/companyassets/4sLyCPgmsy8DA6Dh3/Network%20Segmentation%20Flow.pdf)\n\n[Zero Trust architecture: a paradigm shift in cybersecurity and privacy](https://cdn.theforage.com/vinternships/companyassets/4sLyCPgmsy8DA6Dh3/Zero%20Trust_White%20Paper.pdf)\n\n# [View Presentations](https://github.com/hhphu/InfoSec/blob/main/Projects/Forage/PwC/Task-Four/network-segmentation.pdf)\n",
+    "headerImage": "https://cdn-images-1.medium.com/v2/resize:fit:800/1*FSfq9IHrxqehgVciZF_v8Q.png"
+  }
+}

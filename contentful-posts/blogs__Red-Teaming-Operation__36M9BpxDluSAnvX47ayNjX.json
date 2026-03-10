@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "tags": [
+      {
+        "sys": {
+          "type": "Link",
+          "linkType": "Tag",
+          "id": "projects"
+        }
+      }
+    ],
+    "concepts": []
+  },
+  "sys": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "e16kkd4dabkb"
+      }
+    },
+    "id": "36M9BpxDluSAnvX47ayNjX",
+    "type": "Entry",
+    "createdAt": "2023-07-12T06:58:01.724Z",
+    "updatedAt": "2023-12-28T08:30:48.014Z",
+    "environment": {
+      "sys": {
+        "id": "master",
+        "type": "Link",
+        "linkType": "Environment"
+      }
+    },
+    "publishedVersion": 59,
+    "revision": 4,
+    "contentType": {
+      "sys": {
+        "type": "Link",
+        "linkType": "ContentType",
+        "id": "blogs"
+      }
+    },
+    "locale": "en-US"
+  },
+  "fields": {
+    "title": "Red Teaming Operation",
+    "description": "A project that goes through modern penetration tester and read teamer methodologies, creating documentations and generating reports in a timely fashion.",
+    "mainText": "## Targeting Organization Reconnaissance\n- Perform stealthy reconnaissance against organizations to avoid potential tripwires and discover open services. The service may include websites and development end-points.\n    - Searched for \"Learn About Security\" on Shodan or other recon websites and provide a screenshot for evidence of discovery.\n    - Searched and provided evidence of the DNS zone information for learnaboutsecurity.com.\n- Identify DNS Records for target organization.\n    - Identify the company websites, email provider, and spam service (if one exists).\n    - Provide a list of names to IP mappings for \"Learn About Security\" websites and hosting services.\n- Identify the company websites, email provider, and spam service (if one exists).\n    - Identify the Content Management System in use for the target organization.\n\n## Scanning for Vulnerabilities\n- Scanners like nmap will be used to map out the internal network.\n- Scan the external web site and associated DNS server to identify vulnerable component(s).\n- Scan the VM and identify vulnerable software.\n\n## Vulnerability Research and Identification\n- Confirm presence of sensitive data and gain access to stored credentials and sensitive data.\n    - Research the VM’s remote access software in a few ways:\n        - If credentials are stored in plain text?\n        - If there are any major security weaknesses that are often overlooked?\n        - If there are any software, platform, or version vulnerabilities that are exploitable?\n- Research how to Review Old Backup and Unreferenced Files for Sensitive Information\n    - Research GitHub source code vulnerabilities and Old Backup and Unreferenced Files for Sensitive Information.\n        - Conduct a blind guessing using the organization naming scheme for published content\n        - Filename filter bypass\n\n## Exploiting Vulnerable Services\n- Run Brute force attack against the Security Training Server (debianx64DMZOnCloudNew)\n- Gain remote access to the Win-10 Machine by exploiting an application on the device\n    - Utilize Metasploit Framework (exploit module) to complete the following:\n        - Search for exploits relating to the application manufacturer (Xampp)\n        - Configure the settings for the exploit\n        - Change the payload to one that functions if the default payload is not successful.\n        - Run the exploit to gain a remote shell into the target device\n## Reporting\n- Executive summary should be light on technical details. The findings section should describe the vulnerabilities in enough detail to be reproducible.\n    - Discussions in the Executive Summary section should be policy and procedure oriented. Include recommendations for executives to improve the following:\n        - Software maintenance and version policies\n        - Sensitive data handling policies should be mentioned\n        - Password policies may also be discussed by the student if they recovered the root password\n\n- Prioritized the vulnerabilities found.\n    - The vulnerabilities that were found are prioritized and give an appropriate reason and source for the importance based on the audience.\n    - The student should provide some initial notes to reduce risk of attack against the most vulnerable services by tier or rank.\n        - i.e. PII data leak, High Impact\n        - Outdated versions, High Risk\n\n- Methodology should be documented well enough to be reproducible.\n    - Methodology should be reproducible.\n        - Commands should be documented\n        - Exploit code source locations should be discoverable.\n        - General scientific method based flow of methodology:\n            - The action resulted in the identification of some evidence-based discovery.\n            - The discovery was researched and produced a probable finding.\n\n- The report can be found [here](https://github.com/hhphu/images/blob/main/Red%20Team%20Operations/Red%20Team%20Operations%20Report.pdf)\n\n---\n\n### ACCOMPISHMENTS - LESSON LEARNED - SKILLS GAINED\n- Deployed a secure network infrastructure using VirtualBox, including a Debian server in the DMZ, a web application server in the DMZ, an internal network device in the MZ, a public server, and two firewalls for network segregation.\n- Employed a suite of reconnaissance tools like Wappalyzer, DNS scan, wpscan, dirb, and nmap, to conduct thorough assessments of target applications, enhancing understanding of potential attack vectors and weak points.\n- Conducted thorough OSINT investigations utilizing diverse resources such as GitHub, job postings, phishing campaigns, and StackOverflow, augmenting the intelligence gathering process and enhancing overall assessment outcomes.\n- Utilized industry-standard tools like Metasploit, BurpSuite, and exploitdb, to exploit systems, successfully gaining unauthorized access to DMZ servers and devices in the MZ, uncovering other critical vulnerabilities.\n- Leveraged Hydra, John, and Hashcat to gain access to crack passwords to access systems and escalate privileges.\n- Produced meticulous assessment reports, encompassing an executive summary, testing methodology, vulnerability scores and descriptions, exposure analysis, modified exploit code, and inclusive screenshots captured during the assessment. The report served as a comprehensive deliverable, providing stakeholders with actionable insights and recommendations for effective security improvements.\n",
+    "headerImage": "https://www.immuniweb.com/images/red-teaming-vs-penetration-testing/red-teaming.jpg"
+  }
+}

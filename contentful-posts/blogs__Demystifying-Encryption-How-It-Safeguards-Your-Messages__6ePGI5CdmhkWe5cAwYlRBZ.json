@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "tags": [],
+    "concepts": []
+  },
+  "sys": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "e16kkd4dabkb"
+      }
+    },
+    "id": "6ePGI5CdmhkWe5cAwYlRBZ",
+    "type": "Entry",
+    "createdAt": "2023-09-20T21:30:11.351Z",
+    "updatedAt": "2023-09-20T21:30:11.351Z",
+    "environment": {
+      "sys": {
+        "id": "master",
+        "type": "Link",
+        "linkType": "Environment"
+      }
+    },
+    "publishedVersion": 8,
+    "revision": 1,
+    "contentType": {
+      "sys": {
+        "type": "Link",
+        "linkType": "ContentType",
+        "id": "blogs"
+      }
+    },
+    "locale": "en-US"
+  },
+  "fields": {
+    "title": "Demystifying Encryption: How It Safeguards Your Messages",
+    "description": "Have you ever wondered how your messages and data stay safe when you send them over the internet? The answer lies in a fascinating world called encryption. In this blog post, we'll explore the basic concepts of encryption in the simplest way possible, leaving the complex math aside.",
+    "mainText": "![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*A2YEGorHtwE1xmQcAiJxiA.jpeg)\n\n**Understanding the Basics**\n\nBefore diving into encryption, let's get familiar with some essential terms:\n\n1. **Cryptographic Algorithm or Cipher:** Think of this as the secret recipe that defines how your message gets transformed into a secret code (ciphertext) and back to its original form (plaintext).\n\n2. **Key:** This is like a secret password that the algorithm needs to work its magic. You use the same key to encrypt and decrypt your messages.\n\n3. **Plaintext:** This is your original message, the one you want to keep secret.\n\n4. **Ciphertext:** This is your message after it's been encrypted, looking like gibberish to anyone who doesn't have the key.\n\n**Symmetric Encryption**\n\nImagine you and your friend want to send secret messages to each other. With symmetric encryption, you both use the same secret key to encode and decode messages. Here's how it works:\n\n1. **Encryption:** You take your plaintext message and the secret key, and the encryption process magically turns it into ciphertext. This encrypted message is sent over to your friend.\n\n2. **Decryption:** Your friend uses the same secret key you used to decrypt the message and reveal the original plaintext. Without that secret key, no one can make sense of the ciphertext.\n\n**The Evolution of Encryption**\n\nIn the past, there was a famous encryption method called DES (Data Encryption Standard). However, as technology advanced, DES became less secure, and it could be broken by attackers. In response, the Advanced Encryption Standard (AES) was introduced in 2001. AES is still widely used today, and it's considered very secure.\n\nAES works its magic by repeating four transformations multiple times:\n\n- **Substitution:** It swaps letters in your message with different ones using a secret table.\n- **Shift Rows:** It moves rows of your message around to jumble things up.\n- **Mix Columns:** It does some fancy math on each column of your message.\n- **Add Round Key:** It adds another layer of secret data to your message.\n\nThe total number of these transformations depends on the key size, which can be 128, 192, or 256 bits (don't worry about the bits, it's just a measure of size).\n\n**Keeping Things Simple**\n\nWe won't dive into the complex details of AES, but it's essential to know that modern encryption methods like AES are incredibly secure. They ensure:\n\n- **Confidentiality:** Your messages stay private.\n- **Integrity:** You can trust that your message hasn't been tampered with.\n- **Authenticity:** You know the message came from the person you trust.\n\n**Try It Out**\n\nIf you're curious about trying out encryption, you can use tools like GnuPG or OpenSSL. These programs help you encrypt and decrypt your messages easily, keeping your digital conversations secure.\n\n####  GPG\n- To encrypt a file\n```bash\ngpg --symmetric --cipher-algo <CIPHER> <FILE_NAME>\n<CIPHER>: the name of the cipher used\n<FILE_NAME>: the file to be encrypted\n```\n\nThe default output is binary gpg format. To create ASCCII output, use --amor option\n```bash\ngpg --amor --symmetric --cipher-algo <CIPHER> <FILE_NAME>\n```\n\n- To decrypt a file\n```bash\ngpg --output <OUTPUT_FILE> --decrypt <ENCRYPTED_FILE>\n```\n\n**Example**\n![gpg-demo](https://raw.githubusercontent.com/hhphu/images/main/Demo/Symmetric%20encryption/gpg-demo.png)\nFrom the above screenshot, to encrypt a file named `jokes.txt` using AES-256, we run:\n```bash\ngpg --symmetric --cipher-algo AES256 jokes.txt\n```\n\nEnter a key for encryption. After running the command, we get an output called `jokes.txt.gpg`. To create ASCII output using --armor option, we get `jokes.txt.asc`:\n```bash\ngpg --armor --symmetric --cipher-algo AES256 jokes.txt\n```\n\n#### OpenSSL\n- To encrypt a file\n```bash\nopenssl aes-256-cbc -pbkdf2 -iter 10000 -e -in <INPUT_FILE> -out <OIUTPUT_FILE>\n\naes-256-cbc: the encryption type to be used\n-pbkdf2: we use the Password-Based Key Derivation Function 2 to prevent brute force attacks\n-iter 10000: Add another layer of protection agains brute-force by deriving the encryption key by specifying the number of iterations\n```\n\n- To decrypt a file\n```bash\nopenssl aes-256-cbc -pbkdf2 -iter 10000 -d -in <INPUT_FILE> -out <OUTPUT_FILE>\n```\n\n**Example**\n![openssl-demo](https://raw.githubusercontent.com/hhphu/images/main/Demo/Symmetric%20encryption/openssl-demo.png)\n\nFrom the above screenshot, to encrypt a file named `jokes2.txt`, using AES-256, and create output file named `encrypted_jokes2.txt`, we run:\n```bash\nopenssl aes-256-cbc -pbkdf2 -iter 10000 -e -in jokes2.txt -out encrypted_jokes2.txt\n```\n\nTo decrypted the file and output into `decrypted_jokes2.txt`, we run\n```bash\nopenssl aes-256-cbc -pbkdf2 -iter 10000 -d -in encrypted_jokes2.txt -out decrypted_jokes2.txt  \n```\n\nComparing `jokes2.txt` and `decrypted_jokes2.txt`, we see they have the same content. \n\n**The Challenge of Symmetric Encryption**\n\nWhile symmetric encryption is great for a few people sharing secrets, it's not very scalable. Imagine if you had to share unique keys with every friend you wanted to send secret messages to – it quickly becomes unmanageable.\n\nIn our next blog post, we'll explore a solution to this scalability challenge with asymmetric encryption, where 100 users can securely communicate with just 100 keys. Stay tuned!",
+    "headerImage": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*A2YEGorHtwE1xmQcAiJxiA.jpeg"
+  }
+}

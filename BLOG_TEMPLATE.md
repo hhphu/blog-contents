@@ -2,7 +2,8 @@
   title: "Your Post Title Here"          
   description: "A one or two sentence summary for the post card and SEO."                                               
   date: "2026-03-09"                                        
-  headerImage: "https://your-image-url.jpg"                                                                             
+  headerImage: "https://your-image-url.jpg"
+  tags: []                                                                             
 ---                                                                                                                   
 
 

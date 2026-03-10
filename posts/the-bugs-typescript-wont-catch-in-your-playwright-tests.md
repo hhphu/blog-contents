@@ -1,8 +1,9 @@
 ---
 title: "The Bugs TypeScript Won't Catch in Your Playwright Tests"
-description: "A real audit of a POM-based Playwright E2E suite, documenting eight subtle bugs — silent failures, race conditions, and misplaced operators — that TypeScript's type checker won't save you from."
-date: "2026-03-09"
+description: "Your tests are green. Your TypeScript compiles. Your code looks clean. So what's broken?"
+date: "2026-03-08"
 headerImage: "https://github.com/user-attachments/assets/0ed5593d-763c-48c5-9940-532b6e69a818"
+tags: []
 ---
 
 
@@ -405,3 +406,4 @@ Getters are lazy (safe from early evaluation), reusable within the class, and co
 4. **Base class helpers exist for a reason.** If you build an abstraction layer (`waitForElement`, `fillOutInput`) and then bypass it in subclasses, you've undermined the abstraction. Use the helpers everywhere or don't have them at all.
 
 5. **TypeScript's `!` is a promise to the compiler, not a runtime guarantee.** Every non-null assertion on an external value (env vars, API responses, DOM queries) is a place where your tests can silently degrade.
+

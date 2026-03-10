@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "tags": [
+      {
+        "sys": {
+          "type": "Link",
+          "linkType": "Tag",
+          "id": "TryHackMe"
+        }
+      }
+    ],
+    "concepts": []
+  },
+  "sys": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "e16kkd4dabkb"
+      }
+    },
+    "id": "165Trje44skKABmy5Hl0xg",
+    "type": "Entry",
+    "createdAt": "2023-04-09T09:32:00.329Z",
+    "updatedAt": "2025-06-07T20:17:15.590Z",
+    "environment": {
+      "sys": {
+        "id": "master",
+        "type": "Link",
+        "linkType": "Environment"
+      }
+    },
+    "publishedVersion": 140,
+    "revision": 22,
+    "contentType": {
+      "sys": {
+        "type": "Link",
+        "linkType": "ContentType",
+        "id": "blogs"
+      }
+    },
+    "locale": "en-US"
+  },
+  "fields": {
+    "title": "TryHackMe - Daily Bugle",
+    "description": "Compromise a Joomla CMS account, cracking hashes and escalating privileges by taking advantage of yum.",
+    "mainText": "---\n\n- ***Title:*** Daily Bugle\n- ***Description:*** Compromise a Joomla CMS account via SQLi, practice cracking hashes and escalate your privileges by taking advantage of yum.\n\n---\n\n### Reconnaissance\n- Run `nmap` to gather the target's information\n```bash\n\tnmap -A -Pn $IP >> $IP-nmap-scan\n```\n\n![nmap-scan](https://raw.githubusercontent.com/hhphu/images/main/THM%20-%20DailyBugle/nmap-scan.png)\n\n- From the nmap scan, I see port 80 is open:\n\n![web-server](https://raw.githubusercontent.com/hhphu/images/main/THM%20-%20DailyBugle/web-server.png)\n\n- What's more, I found some potential directories to exploit and figured that the web server is using Joomla.\n\n- Doing some Googling, I found a way to find Joomla version by accessing the following url:\n_https://www.itoctopus.com/how-to-quickly-know-the-version-of-any-joomla-website_\n\n- Also from this link, I was able to find a lot of directories for possible exploits. Joomla version can also be found in README.md\n\n### Exploit\n- I found a vulnerability related to Joomla 3.7.0 [CVE-2017-8917](\"https://www.exploit-db.com/exploits/42033\")\nUsing a python script from [HarryR's github](\"https://github.com/XiphosResearch/exploits/tree/master/Joomblah\"), I was able to retrieved the login credentials for the CMS.\n\n```bash\n\tpython3 joomlah.py http://$IP\n```\n\n![joomlah-script](https://raw.githubusercontent.com/hhphu/images/main/THM%20-%20DailyBugle/joomlah-script.png)\n\n- Found a user \"jonah\" with a hash password, which uses bcrypt algorithm. Use John to crack this hash:\n\n```bash\n\tjohn hash.txt --wordlist=/usr/share/wordlists/rockyou.txt --format=bcrypt\n```\n\n![crack-hash-password](https://raw.githubusercontent.com/hhphu/images/main/THM%20-%20DailyBugle/crack-hash-password.png)\n\n- We're now able to log into Joomla admin as `jonah`\n\n- Following instruction on this [article](\"https://www.hqphu.com/posts/6H6RATKcCXxBmtS027AfKO\"), I was able to gain a reverse shell on the machine. Running linpeas.sh on the target machine, I found a password in config file:\n\n![user-password](https://raw.githubusercontent.com/hhphu/images/main/THM%20-%20DailyBugle/user-password.png)\n\n- Using this password, we're able to SSH to the target machine under jjameson.\n- A simple command ```sudo -l```, we found jjameson can run yum. Refering to [GTFOBins](\"https://gtfobins.github.io/gtfobins/yum/\"), i was able to escalate to root.\n\n![priv-esc](https://raw.githubusercontent.com/hhphu/images/main/THM%20-%20DailyBugle/priv-esc.png)\n",
+    "headerImage": "https://raw.githubusercontent.com/hhphu/images/main/THM%20-%20DailyBugle/Header.png"
+  }
+}

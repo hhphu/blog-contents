@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "tags": [
+      {
+        "sys": {
+          "type": "Link",
+          "linkType": "Tag",
+          "id": "projects"
+        }
+      }
+    ],
+    "concepts": []
+  },
+  "sys": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "e16kkd4dabkb"
+      }
+    },
+    "id": "2hGHs2xP0eHUlUhb9BRI1g",
+    "type": "Entry",
+    "createdAt": "2024-07-03T11:00:02.425Z",
+    "updatedAt": "2024-07-03T11:00:02.425Z",
+    "environment": {
+      "sys": {
+        "id": "master",
+        "type": "Link",
+        "linkType": "Environment"
+      }
+    },
+    "publishedVersion": 10,
+    "revision": 1,
+    "contentType": {
+      "sys": {
+        "type": "Link",
+        "linkType": "ContentType",
+        "id": "blogs"
+      }
+    },
+    "locale": "en-US"
+  },
+  "fields": {
+    "title": "PwC - Cybersecurity Consultant: Task Three - IT System Security Baseline",
+    "description": "This is Task 3 of the PwC - Cybersecurity Consultant project.",
+    "mainText": "# IT System Security Baseline\n\n## Background\nAfter analysing the impact of possible risks at Boldi AG, it’s time to determine how we can lower the likelihood of these risks through specific cybersecurity measures. We need to prevent these risks from occurring by decreasing each IT system’s threat surface and thus decreasing the total threat surface of Boldi AG.\n\nStefan has met with the Head of IT Infrastructure at Boldi AG to discuss the measures required to follow up on the risk assessment. He acknowledged the need for a detailed vulnerability review as this has not been performed for several years. However, he is not convinced that maintaining an up-to-date Information Systems Security Baseline is worth the effort since the system can be scanned with a vulnerability scan anytime. We need to convince him and you'll help Stefan to create some graphics to do so.\n\n## Tasks\nSubmit a PowerPoint slide deck to complete this task.\n\nFirst, you need to learn more about\n- Vulnerability Assessment\n- Mitigation Planning\n- Vulnerability Scanning\n- Hardware and Systems Security\n- Information Systems Security Baseline\n\nand why an up-to-date Information System Security Baseline is crucial. \n\nUse your new knowledge to create a graphic using the terms, so we can present it to the Head of IT Infrastructure. \n\n## Additional Resrouces\n[PwC’s The new realities of cyber security podcast: Getting the basics right](https://podcasts.apple.com/gb/podcast/new-realities-cyber-security-s2e4-getting-basics-right/id1233628925?i=1000427787855)\n[Vulnerability Management](https://cdn.theforage.com/vinternships/companyassets/4sLyCPgmsy8DA6Dh3/Vulnerability-management.pdf)\n\n# [View Presentations](https://github.com/hhphu/InfoSec/blob/main/Projects/Forage/PwC/Task-Three/it-system-security-baseline.pdf)\n",
+    "headerImage": "https://cdn-images-1.medium.com/v2/resize:fit:800/1*FSfq9IHrxqehgVciZF_v8Q.png"
+  }
+}
