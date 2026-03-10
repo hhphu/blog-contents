@@ -3,8 +3,8 @@ title: "Building an AI Spam Detector"
 description: "In this project, I attempt to write a Python script to apply Machine Learning to detect spams emails. First, I will build the model and use a set of data to train the model. Then I will use a test file to test the results.
 "
 date: "2023-12-21"
-headerImage: "https://www.eweek.com/wp-content/uploads/2023/05/ew-ai-detector-software-1024x682.png"
-tags: ["projects"]
+headerImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS95g-hyDxR6oSbYLhrnpZgNbsguS16HZXLng&s"
+tags: ["AI", "Python"]
 ---
 
 ## Machine Learning Pipeline
