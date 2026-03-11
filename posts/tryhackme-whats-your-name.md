@@ -40,7 +40,7 @@ Add the file to host name **`echo "$IP worldwap.thm" >> /etc/hosts"`**
 <img width="1144" height="179" alt="Screenshot 2026-03-11 135550" src="https://github.com/user-attachments/assets/534142fb-d537-4caa-a875-d8d7daa19ba7" />
 
 - After the registration, we are told on the website to log in at: **http://login.worldwap.thm**
-- View page source of **http://login.worldwap.thm**, we find a login endpoint **`/login.php`**
+- View page source of **http://login.worldwap.thm**, we find a login endpoint **`/login.php`** (make sure to add `login.worldwap.thm` to the host file)
 - Navigate to the login page. this should be the exploit surface. URL should be: **http://login.worldwap.thm/login.php**
 - Copy the cookie, paste it into the login page's cookie session. Then refresh the page
 
@@ -51,3 +51,6 @@ Add the file to host name **`echo "$IP worldwap.thm" >> /etc/hosts"`**
 <img width="1205" height="644" alt="image" src="https://github.com/user-attachments/assets/c971c87f-bee3-4ef1-9f6a-eaf3cb179217" />
 
 NOTE: In real world, once you enumerate the directory on both port, you'll see that on port 80, there's **`4.py`** whereas on port 8081, there's **`admin.py`**. Reading these two files will help us obtain the credentials to log in, hence retrieving the flags. However, it's not the purpose of this room. So we continue to exploit the front-end of the application.
+
+### Flag 2
+There are 3 ways to retrieve flag 2.
