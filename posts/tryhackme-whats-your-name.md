@@ -74,6 +74,12 @@ NOTE: In real world, once you enumerate the directory on both port, you'll see t
 </script>
 ```
 
+2. Trigger another XSS `<script>alert(2)</script>`
+3. We should get the admin's cookie session
+
+<img width="837" height="390" alt="Screenshot 2026-03-11 at 8 10 14 PM" src="https://github.com/user-attachments/assets/ea6d9477-c90d-4aa0-a851-2f883c12843a" />
+
+
 #### Flag 2.2
   1. Inject this payload into the chatbot
 
