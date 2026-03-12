@@ -3,7 +3,7 @@ title: "Red Teaming Operation"
 description: "A project that goes through modern penetration tester and read teamer methodologies, creating documentations and generating reports in a timely fashion."
 date: "2023-07-12"
 headerImage: "https://www.immuniweb.com/images/red-teaming-vs-penetration-testing/red-teaming.jpg"
-tags: projects
+tags: Security
 ---
 
 ## Targeting Organization Reconnaissance

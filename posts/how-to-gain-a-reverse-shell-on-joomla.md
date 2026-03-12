@@ -3,7 +3,7 @@ title: "How to gain a Reverse Shell on Joomla"
 description: "This article is a step-by-step tutorial on how to gain reverse shell of Joomla CMS."
 date: "2022-05-22"
 headerImage: "https://images.ctfassets.net/e16kkd4dabkb/7BKU74c5JlBNRqIQl8mqcI/7bfda3ecc9bd049caf92a27425e012f5/logo-joomla.jpg?h=250"
-tags: projects
+tags: Web App Security
 ---
 
 Joomla! is one of the most popular CMS to build web sites and powerful online applications. While working a TryHackMe room, Daily Bugle, I came across a web server which used Joomla. I successfully completed the room after gaining a reverse shell of Joomla. Write up can be found [here].
