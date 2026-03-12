@@ -3,7 +3,7 @@ title: "The Bugs TypeScript Won't Catch in Your Playwright Tests"
 description: "Your tests are green. Your TypeScript compiles. Your code looks clean. So what's broken?"
 date: "2026-03-08"
 headerImage: "https://github.com/user-attachments/assets/0ed5593d-763c-48c5-9940-532b6e69a818"
-tags: []
+tags: Playwright
 ---
 
 
