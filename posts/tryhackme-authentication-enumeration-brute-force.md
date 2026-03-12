@@ -3,7 +3,7 @@ title: "TryHackMe — Authentication Enumeration & Brute force"
 description: "Enumerate and brute force authentication mechanism."
 date: "2025-06-07"
 headerImage: "https://tryhackme-images.s3.amazonaws.com/room-icons/645b19f5d5848d004ab9c9e2-1719928599415"
-tags: ["TryHackMe", "Web App Security"]
+tags: TryHackMe, Web App Security
 ---
 
 ## Objectives

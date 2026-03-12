@@ -3,7 +3,7 @@ title: "TryHackMe — Snyk"
 description: "This module introduces the fundamentals of using Snyk to enhance software security. "
 date: "2024-06-25"
 headerImage: "https://miro.medium.com/v2/resize:fit:720/format:webp/0*P-rxSlVwV9sUaOQy"
-tags: ["TryHackMe"]
+tags: TryHackMe
 ---
 
 # Introduction

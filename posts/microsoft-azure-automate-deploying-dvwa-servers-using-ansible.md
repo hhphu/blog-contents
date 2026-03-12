@@ -3,7 +3,7 @@ title: "Microsoft Azure - Automate deploying DVWA servers using Ansible "
 description: "This is my personal projects in which I use Microsoft Azure and Ansible to deploy multiple DVWA web servers. The purpose of this project is to get familiar with Microsoft Azure and its services while building a secure system on the Cloud"
 date: "2024-06-16"
 headerImage: "https://miro.medium.com/v2/resize:fit:720/format:webp/0*4vwmnWDm1ZB8hAXe.jpg"
-tags: ["projects"]
+tags: projects
 ---
 
 # Ansible

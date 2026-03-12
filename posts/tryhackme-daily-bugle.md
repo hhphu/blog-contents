@@ -3,7 +3,7 @@ title: "TryHackMe - Daily Bugle"
 description: "Compromise a Joomla CMS account, cracking hashes and escalating privileges by taking advantage of yum."
 date: "2023-04-09"
 headerImage: "https://raw.githubusercontent.com/hhphu/images/main/THM%20-%20DailyBugle/Header.png"
-tags: ["TryHackMe"]
+tags: TryHackMe
 ---
 
 ---

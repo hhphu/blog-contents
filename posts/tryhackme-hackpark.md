@@ -3,7 +3,7 @@ title: "TryHackMe - HackPark"
 description: "Exploit a public website and escalate privileges on a Windows Machine."
 date: "2023-06-06"
 headerImage: "https://raw.githubusercontent.com/hhphu/images/main/THM%20-%20HackPark/Header.png"
-tags: ["TryHackMe"]
+tags: TryHackMe
 ---
 
 ---

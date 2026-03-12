@@ -3,7 +3,7 @@ title: "Microsoft Azure SIEM "
 description: "Implement a secure Azure Infrastructure Monitoring and Threat Analysis."
 date: "2021-10-13"
 headerImage: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*qgUUVCAtRtD3eJlqoAUPYQ.png"
-tags: ["projects"]
+tags: projects
 ---
 
 -----

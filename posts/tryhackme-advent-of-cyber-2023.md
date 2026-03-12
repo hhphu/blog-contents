@@ -3,7 +3,7 @@ title: "TryHackMe — Advent of Cyber 2023"
 description: "A 24-day series of beginner-friendly security challenges hosted by TryHackMe in December 2023."
 date: "2024-07-26"
 headerImage: "https://miro.medium.com/v2/resize:fit:720/format:webp/0*MtYnbQiBxBCkGwty.png"
-tags: ["TryHackMe"]
+tags: TryHackMe
 ---
 
 # INTRODUCTION

@@ -4,7 +4,7 @@ description: "In this project, I attempt to write a Python script to apply Machi
 "
 date: "2023-12-21"
 headerImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS95g-hyDxR6oSbYLhrnpZgNbsguS16HZXLng&s"
-tags: ["AI", "Python"]
+tags: AI, Python
 ---
 
 ## Machine Learning Pipeline

@@ -3,7 +3,7 @@ title: "TryHackMe - Alfred"
 description: "Exploit misconfiguration on Jenkins server to gain access to the system and escalate privileges."
 date: "2023-04-18"
 headerImage: "https://raw.githubusercontent.com/hhphu/images/main/THM%20-%20Alfred/alfred-header.png"
-tags: ["TryHackMe"]
+tags: TryHackMe
 ---
 
 ---

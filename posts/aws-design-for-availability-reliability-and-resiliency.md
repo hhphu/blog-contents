@@ -3,7 +3,7 @@ title: "AWS - Design for Availability, Reliability and Resiliency"
 description: "Desgin AWS Solutions for Availability, Reliability and Resiliency."
 date: "2024-11-27"
 headerImage: "https://github.com/user-attachments/assets/4258e84d-8e8a-485b-a13d-d857dc430af2"
-tags: ["aws", "cloud"]
+tags: aws, cloud
 ---
 
 ## Create VPCs

@@ -3,7 +3,7 @@ title: "TryHackMe - Overpass 2"
 description: "Analyze PCAP file to investigate attackers' actions and hack back to the system."
 date: "2023-07-04"
 headerImage: "https://raw.githubusercontent.com/hhphu/images/main/THM%20-%20OverPass%202/OverPass-Header.png"
-tags: ["TryHackMe"]
+tags: TryHackMe
 ---
 
 ---

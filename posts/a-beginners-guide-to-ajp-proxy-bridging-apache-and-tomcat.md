@@ -3,7 +3,7 @@ title: "A Beginner's Guide to AJP Proxy: Bridging Apache and Tomcat"
 description: "If you've ever ventured into the world of web development, you might have encountered the need to run Java web applications using the Apache web server. "
 date: "2023-10-06"
 headerImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsYFeaQyaoRJL438huHhsCJEPsKYPR4TiNYxEPO3wE01wozK-dyjBL8pSatZ4YyObINdc&usqp=CAU"
-tags: ["Web App Security"]
+tags: Web App Security
 ---
 
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsYFeaQyaoRJL438huHhsCJEPsKYPR4TiNYxEPO3wE01wozK-dyjBL8pSatZ4YyObINdc&usqp=CAU)
