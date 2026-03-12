@@ -2,9 +2,11 @@
 title: "AWS: Cloud 101"
 description: "Provide users who are not familiar with cloud technologies insight into some of the cloud's unique characteristics. "
 date: "2025-01-01"
-headerImage: https://youtu.be/VsFjFdCTgXk
+headerImage: https://i9.ytimg.com/vi_webp/VsFjFdCTgXk/maxresdefault.webp?v=676d222f&sqp=CKTZyc0G&rs=AOn4CLAxdg-Jexip_LpFLfVa57fB6gxzpA
 tags: Cloud, AWS, TryHackMe
 ---
+
+## VIDEO — https://youtu.be/VsFjFdCTgXk
 
 ## Introduction
 This room is intended to provide users who are not familiar with cloud technologies insight into some of the cloud's unique characteristics. Students in the room will learn about:
