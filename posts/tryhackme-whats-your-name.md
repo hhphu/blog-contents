@@ -3,7 +3,7 @@
   description: "This challenge will test client-side exploitation skills, from inspecting Javascript to manipulating cookies to launching CSRF/XSS attacks."                                               
   date: "2026-03-11"                                        
   headerImage: "https://tryhackme-images.s3.amazonaws.com/room-icons/62a7685ca6e7ce005d3f3afe-1718463471016"
-  tags: ["TryHackMe", "Web App Security"]                                                                             
+  tags: TryHackMe, Web App Security                                                                          
 ---                                                                                                                   
 
 ## URL
