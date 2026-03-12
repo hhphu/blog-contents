@@ -25,3 +25,4 @@ tags: []
 - So, the next time you find yourself questioning your place in the cybersecurity world, remember that you are not alone. Recognize the fear for what it is — a natural response to stepping out of your comfort zone — and face it head-on.
 
 - With each step you take, you’ll gain confidence, and the impostor syndrome will begin to lose its grip. You belong here, and with perseverance and courage, you’ll continue to grow, learn, and succeed in your cybersecurity journey.
+
