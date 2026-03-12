@@ -97,8 +97,6 @@ NOTE: In real world, once you enumerate the directory on both port, you'll see t
 ```
   2. Trigger another payload `<script>alert(1)</script>`
   3. Log out and login as the admin with a new password `admin:password`
-     
-<img width="752" height="508" alt="Screenshot 2026-03-11 at 6 49 24 PM" src="https://github.com/user-attachments/assets/034094ff-b0e1-4be2-8c96-70089128653c" />
 
 #### Flag 2.3
 1. Inject the following payload into the Chatbot to change the admin's password to `pass123`:
@@ -122,4 +120,4 @@ NOTE: In real world, once you enumerate the directory on both port, you'll see t
 
 3. Log in with the new password for admin `admin:pass123`
 
-4. 
+<img width="752" height="508" alt="Screenshot 2026-03-11 at 6 49 24 PM" src="https://github.com/user-attachments/assets/034094ff-b0e1-4be2-8c96-70089128653c" />
