@@ -9,6 +9,8 @@
 ## URL
 https://tryhackme.com/room/whatsyourname\
 
+## Video — https://www.youtube.com/watch?v=6AY8ecDNIdg
+
 ## Set up
 Add the file to host name `echo "$IP worldwap.thm" >> /etc/hosts"`
 
