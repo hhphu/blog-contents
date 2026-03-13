@@ -26,3 +26,7 @@ tags: Web App Security
 
 <img width="717" height="642" alt="Screenshot 2026-03-13 013426" src="https://github.com/user-attachments/assets/1f2d62f9-5e3a-41ca-9a71-557099bb092f" />
 
+## Flag 1
+- There is a potential SSRF vulnerability on `services.html`
+
+
