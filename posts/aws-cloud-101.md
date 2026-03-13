@@ -2,7 +2,7 @@
 title: "AWS: Cloud 101"
 description: "Provide users who are not familiar with cloud technologies insight into some of the cloud's unique characteristics. "
 date: "2025-01-01"
-headerImage: https://i9.ytimg.com/vi_webp/VsFjFdCTgXk/maxresdefault.webp?v=676d222f&sqp=CKTZyc0G&rs=AOn4CLAxdg-Jexip_LpFLfVa57fB6gxzpA
+headerImage: https://i9.ytimg.com/vi_webp/VsFjFdCTgXk/maxresdefault.webp?v=69b276d1&sqp=CISPz80G&rs=AOn4CLAkQKavTW_oNynZSL2R3OI885CFpg
 tags: Cloud, AWS, TryHackMe
 ---
 
