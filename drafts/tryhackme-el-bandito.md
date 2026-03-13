@@ -7,9 +7,22 @@ tags: Web App Security
 ---
 
 
-## URL
+## URL — https://tryhackme.com/room/elbandito
 
 ## VIDEO
 
 ## ENUMERATION
-- Run nmap scan against the target `nmap -sV -A -p- bandito.thm`
+1. Run nmap scan against the target `nmap -sV -A -p- bandito.thm`
+  
+<img width="1057" height="861" alt="Screenshot 2026-03-13 012839" src="https://github.com/user-attachments/assets/012a6e4b-eea6-4872-ba74-918ddaebbe8e" />
+
+-> Open ports: 22, 80, 631, 8080
+
+2. Run `dirb` to enumerate directories on port 80: `dirb https://bandito.thm:80`
+
+<img width="697" height="674" alt="Screenshot 2026-03-13 013139" src="https://github.com/user-attachments/assets/e82c9d49-8a41-4203-9df8-0ea7b9fead87" />
+
+3. Run `dirb` to enumerate directories on port 8080: `dirb http://bandito.thm:8080`
+
+<img width="717" height="642" alt="Screenshot 2026-03-13 013426" src="https://github.com/user-attachments/assets/1f2d62f9-5e3a-41ca-9a71-557099bb092f" />
+
