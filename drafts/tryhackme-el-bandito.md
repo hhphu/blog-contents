@@ -68,94 +68,17 @@ Host: bandito.thm:8080
 6. Disable the "Update Content-Length" feature on Burp Suites.
 7. Send the request. We should be able to view `burn.html`
 8. Try to burn a token, we get error. Also, from here we learn the application is using Java Spring framework.
-9. Google Spring framework and we get a list of potential endpoints to exploit:
-
-<details>
-  <summary>Spring framework endpoints</summary>
-   actuator
-health
-info
-metrics
-mappings
-beans
-env
-configprops
-caches
-loggers
-threaddump
-heapdump
-shutdown
-auditevents
-conditions
-scheduledtasks
-httptrace
-flyway
-liquibase
-prometheus
-
-api
-v1
-v2
-v3
-rest
-graphql
-admin
-management
-manage
-config
-settings
-status
-
-login
-logout
-register
-signup
-auth
-authenticate
-oauth
-token
-refresh
-session
-
-users
-user
-accounts
-account
-profile
-profiles
-roles
-permissions
-groups
-admins
-
-products
-orders
-cart
-checkout
-payments
-billing
-invoices
-transactions
-
-search
-query
-reports
-analytics
-stats
-dashboard
-
-upload
-download
-files
-attachments
-media
-images
-
-notifications
-messages
-comments
-posts
-feeds 
-</details>
+9. Google Spring framework and we get a list of potential endpoints to exploit: https://docs.spring.io/spring-boot/reference/actuator/endpoints.html
+10. Run `dirb` against port 8081 using this wordlist
+11. With new discovery, go to **/mappings** endpoint. We find two interesting endpoints: **/admin-creds** & **/admin-flag**
+12. Viewing these two payloads in regular browser will yield 403 error, meaning the proxy restricts the access.
+13. Use the payload from step #5 to bypass the restriction
+    - **admin-flag**
+    - **admin-creds**
+   
+## Flag 2
+1. Log in with the credentials from the above step #13
+2. Use Burp to intercept the request to homepage on port 80 & send it to **Repeater**
+3. 
 
 
