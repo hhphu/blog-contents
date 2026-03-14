@@ -11,9 +11,9 @@ https://tryhackme.com/room/whatsyourname\
 
 ## Video
 This write up provide detais step by step how to solve the room. For explanation, details and my thought process, you can view this video
-```
-https://www.youtube.com/watch?v=6AY8ecDNIdg
-```
+
+`**https://www.youtube.com/watch?v=6AY8ecDNIdg**`
+
 
 ## Set up
 Add the file to host name `echo "$IP worldwap.thm" >> /etc/hosts"`
